@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.line-box{
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
