@@ -1,14 +1,66 @@
+html, body {
+    font-size: 15px;
+    height: 100%;
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    background: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+    color: #555555;
+    text-rendering: optimizeLegibility;
+    min-width: 320px;
 }
 
-a {
-  color: #00B7FF;
+h1.ui.header {
+  font-size: 3em;
 }
 
-.line-box{
-    width: 1000px;
-    height: 600px;
+.ui.page.grid.segment {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.masthead.segment {
+    background-image: url(/images/bg.jpg);
+    background-size: cover;
+    margin: 0em;
+    padding-top: 4rem;
+    overflow: hidden;
+    -webkit-box-shadow: 0 -20px 10px 0 rgba(0, 0, 0, 0.1) inset !important;
+    box-shadow: 0 -20px 10px 0 rgba(0, 0, 0, 0.1) inset !important;
+}
+
+.masthead.segment .column {
+  position: relative;
+}
+
+.masthead.segment .information {
+  margin: 3em 1em 1em 280px;
+}
+
+.masthead.segment .information p {
+  max-width: 600px;
+  margin: 0em 0px 2em 0em;
+  font-size: 2rem;
+}
+.masthead.segment h1.header{
+    font-size: 6rem;
+}
+.masthead.segment h1.ui.header .sub {
+  font-size: 0.7em;
+}
+
+.masthead.segment .image {
+  position: absolute;
+  left: 0%;
+  bottom: -110px;
+}
+
+
+.num.rank.box, .speed.rank.box {
+    width: 100%;
+    height: 800px;
     margin: 0 auto;
 }
+

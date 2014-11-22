@@ -1,11 +1,45 @@
 <% include head.html %>
 
-<div class="line-box">
-    
-</div>
+    <div class="ui inverted page grid masthead segment">
+        <div class="column">
+            <img src="images/cat.png" class="ui medium image">
+            <div class="ui transition information visible">
+                <h1 class="ui inverted header">
+                    行业热度
+                </h1>
+                <p>寻找热门行业！</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="ui segment">
+        <div class="ui selection dropdown">
+            <input type="hidden" name="gender">
+            <div class="default text">选择年份</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <div class="item" data-value="2014">2014</div>
+                    <div class="item" data-value="2013">2013</div>
+            </div>
+        </div>
 
-<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
-<script src="/vendor/echarts-all.js"></script>
-<script src="/javascripts/index.js"></script>
-<% include foot.html %>
+        <div>
+            <h2 class="ui header dividing">
+                专利数排名</h2>
+            <div class="num rank box">
+
+            </div>
+        </div>
+
+        <div>
+            <h2 class="ui header dividing">专利增长速度</h2>
+            <div class="speed rank box">
+
+            </div>
+        </div>
+
+    </div>
+
+    <% include foot.html %>
+        <script src="/vendor/echarts-all.js"></script>
+        <script src="/javascripts/index.js"></script>
