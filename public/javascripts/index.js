@@ -11,7 +11,13 @@ $(document).ready(function() {
             }
         });
 
-        $selectClassify.dropdown();
+        var $wiki = $('.wiki a');
+        $selectClassify.dropdown({
+            onChange: function  (val, text) {
+                $selectClassify.find('.menu .menu').removeClass('visible').addClass('hidden');
+                $wiki.attr('href', 'https://zh.wikipedia.org/wiki/' + text).text('wiki: ' + text);
+            }
+        });
 
         var $tabs = $('.tab');
         $('.statistics.type.menu .item').click(function() {

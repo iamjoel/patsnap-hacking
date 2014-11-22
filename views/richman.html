@@ -27,9 +27,24 @@
             <input type="hidden" name="classify">
             <div class="default text">选择行业（todo）</div>
             <i class="dropdown icon"></i>
-            <div class="menu">
-                <div class="item" data-value="A">农业</div>
-                <div class="item" data-value="B">作业；运输</div>
+            <div class="menu" style="overflow: visible;">
+                <div class="item" data-value="A">
+                    <i class="dropdown icon"></i>
+                    农业
+                    <div class="menu">
+                        <div class="item">收获；割草</div>
+                        <div class="item">动物捕捉</div>
+                        <div class="item">种植收获播种</div>
+                    </div>
+                </div>
+                <div class="item" data-value="B">
+                    <i class="dropdown icon"></i>
+                    作业；运输
+                    <div class="menu">
+                        <div class="item">一般的物理或化学的方法或装置</div>
+                        <div class="item">破碎、磨粉或粉碎；谷物碾磨的预处理</div>
+                    </div>
+                </div>
                 <div class="item" data-value="C">化学；冶金</div>
                 <div class="item" data-value="D">纺织；造纸</div>
                 <div class="item" data-value="E">固定建筑物</div>
@@ -40,6 +55,7 @@
             </div>
         </div>
 
+        <span class="wiki"><a href="###" target="_blank"></a></span>
 
         <div class="ui tabular statistics type menu">
             <a class="item active" data-tab="num-rank">
