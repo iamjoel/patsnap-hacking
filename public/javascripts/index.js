@@ -1,68 +1,14 @@
 $(document).ready(function() {
     function init() {
-        $('.ui.dropdown').dropdown();
-        var numRankData = [{
-            name: '农业',
-            num: 1000
-        }, {
-            name: '作业；运输',
-            num: 900
-        },
-        {
-            name: '化学；冶金',
-            num: 800
-        }, {
-            name: '纺织 造纸',
-            num: 500
-        },
-        {
-            name: '固定建筑物',
-            num: 400
-        }, {
-            name: '机械工程、照明、加热',
-            num: 200
-        },
-        {
-            name: '物理',
-            num: 100
-        }, {
-            name: '电学',
-            num: 90
-        }];
+        var $year = $('.show.year');
+        $('.ui.dropdown').dropdown({
+            onChange: function(val) {
+                search(val);
+                $year.text(val);
+            }
+        });
 
-        renderData($('.num.rank.box'), numRankData, 'num');
-
-        var speedRankData = [{
-            name: '农业',
-            speed: 0.95
-        }, {
-            name: '作业；运输',
-            speed: -0.9
-        },
-        {
-            name: '化学；冶金',
-            speed: 0.8
-        }, {
-            name: '纺织 造纸',
-            speed: 0.5
-        },
-        {
-            name: '固定建筑物',
-            speed: 0.4
-        }, {
-            name: '机械工程、照明、加热',
-            speed: 0.2
-        },
-        {
-            name: '物理',
-            speed: 0.1
-        }, {
-            name: '电学',
-            speed: 0.9
-        }];
-
-        renderData($('.speed.rank.box'), speedRankData, 'speed');
-
+        search($year.eq(0).text());
     }
 
     function formatToChartData(data, valKey) {
@@ -161,6 +107,27 @@ $(document).ready(function() {
 
         // 图表释放-------------------
         // myChart.dispose();
+    }
+
+    function search(year) {
+        $.ajax({
+            url: '/patent/num-rank',
+            data: {
+                year: year
+            }
+        }).done(function (data) {
+            renderData($('.num.rank.box'), data, 'num');
+        });
+
+        $.ajax({
+            url: '/patent/speed-rank',
+            data: {
+                year: year
+            }
+        }).done(function (data) {
+            renderData($('.speed.rank.box'), data, 'speed');
+        });
+
     }
 
 

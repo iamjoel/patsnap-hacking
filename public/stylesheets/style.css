@@ -57,7 +57,9 @@ h1.ui.header {
   bottom: -110px;
 }
 
+.ui.dropdown .menu .select.year .item{
 
+}
 .num.rank.box, .speed.rank.box {
     width: 100%;
     height: 800px;
