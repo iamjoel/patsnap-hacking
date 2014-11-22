@@ -42,22 +42,22 @@ var numRankData = {
         num: 500
     }, {
         name: '化学；冶金',
-        num: 800
+        num: 600
     }, {
         name: '纺织 造纸',
-        num: 500
+        num: 200
     }, {
         name: '固定建筑物',
-        num: 400
+        num: 900
     }, {
         name: '机械工程、照明、加热',
         num: 200
     }, {
         name: '物理',
-        num: 100
+        num: 500
     }, {
         name: '电学',
-        num: 90
+        num: 20
     }],
 };
 

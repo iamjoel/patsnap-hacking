@@ -1,14 +1,31 @@
 $(document).ready(function() {
+    var $showYear = $('.show.year');
+    var $selectYear = $('.select.year.dropdown');
+
     function init() {
-        var $year = $('.show.year');
-        $('.ui.dropdown').dropdown({
+        $selectYear.dropdown({
             onChange: function(val) {
-                search(val);
-                $year.text(val);
+                render();
+                $showYear.text(val);
             }
         });
 
-        search($year.eq(0).text());
+        var $tabs = $('.tab');
+        $('.statistics.type.menu .item').click(function() {
+            var $this = $(this);
+            if (!($this).hasClass('active')) {
+                $this.addClass('active').siblings().removeClass('active');
+
+                var tarName = $(this).data('tab');
+                $tabs.removeClass('active');
+                var $activeContent = $(['[data-tab=', tarName, ']', '.tab'].join(''));
+                $activeContent.addClass('active');
+
+                render();
+            }
+        });
+
+        render();
     }
 
     function formatToChartData(data, valKey) {
@@ -27,7 +44,7 @@ $(document).ready(function() {
     function renderData($el, data, valKey) {
         var chartData = formatToChartData(data, valKey);
         // srcipt标签式引入
-        var myChart = echarts.init($el[0]);
+        var myChart = $el.data('chart') || echarts.init($el[0]);
 
         // myChart.showLoading({
         //     text: '正在努力的读取数据中...', //loading话术
@@ -101,7 +118,7 @@ $(document).ready(function() {
         // });
         myChart.setOption(option);
 
-
+        return myChart;
         // 图表清空-------------------
         // myChart.clear();
 
@@ -109,25 +126,18 @@ $(document).ready(function() {
         // myChart.dispose();
     }
 
-    function search(year) {
+    function render() {
+        var year = $selectYear.dropdown('get value') || 2014;
+        var $activeBox = $('.active.tab .box');
         $.ajax({
-            url: '/patent/num-rank',
+            url: $activeBox.data('url'),
             data: {
                 year: year
             }
-        }).done(function (data) {
-            renderData($('.num.rank.box'), data, 'num');
+        }).done(function(data) {
+            var chart = renderData($activeBox, data, $activeBox.data('val-key'));
+            $activeBox.data('chart', chart);
         });
-
-        $.ajax({
-            url: '/patent/speed-rank',
-            data: {
-                year: year
-            }
-        }).done(function (data) {
-            renderData($('.speed.rank.box'), data, 'speed');
-        });
-
     }
 
 
