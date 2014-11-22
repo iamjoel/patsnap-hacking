@@ -57,6 +57,7 @@ $(document).ready(function() {
 
         // 图表使用-------------------
         var option = {
+
             // legend: { // 图例配置
             //     padding: 5, // 图例内边距，单位px，默认上下左右内边距为5
             //     itemGap: 10, // Legend各个item之间的间隔，横向布局时为水平间隔，纵向布局时为纵向间隔
@@ -68,7 +69,12 @@ $(document).ready(function() {
             xAxis: [ // 直角坐标系中横轴数组
                 {
                     type: 'category', // 坐标轴类型，横轴默认为类目轴，数值轴则参考yAxis说明
-                    data: chartData.xAxis
+                    data: chartData.xAxis,
+                    title: {
+                        textStyle: {
+                            fontSize: 30
+                        }
+                    }
                 }
             ],
             yAxis: [ // 直角坐标系中纵轴数组
@@ -81,7 +87,22 @@ $(document).ready(function() {
             series: [{
                 name: '', // 系列名称
                 type: 'bar', // 图表类型，折线图line、散点图scatter、柱状图bar、饼图pie、雷达图radar
-                data: chartData.vals
+                data: chartData.vals,
+                itemStyle: {
+                    label: {
+                        textStyle: {
+                            fontSize: 30,
+                            fontFamily: '微软雅黑',
+                            fontWeight: 'bold'
+                        }
+                    }
+
+                },
+                textStyle: {
+                    fontSize: 30,
+                    fontFamily: '微软雅黑',
+                    fontWeight: 'bold'
+                }
             }],
             toolbox: {
                 show: true,
@@ -106,8 +127,6 @@ $(document).ready(function() {
                 }
             }
         };
-        myChart.setOption(option);
-
 
         // 增加些数据------------------
         // option.legend.data.push('win');

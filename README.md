@@ -1,8 +1,8 @@
 # 智慧芽 hacking
-如何判定一个行业很热门
+寻找热门行业
 1. 某一年行业专利排名
-1. 行业专利数的增长趋势
-1. 牛逼值：风投；公司数量；初创公司数量。 以及增幅。。。
+1. 行业专利数的增长趋势排名
+1. 行业的综合排名
 
 ## 接口
 ### 某一年行业专利排名
@@ -56,5 +56,3 @@ http://www.soopat.com/IPC/Result
 ## 其他
 * 数据呈现，使用[echarts](http://echarts.baidu.com/index.html) [why?](http://echarts.baidu.com/doc/slide/whyEcharts.html
 
-## todo
-* xAxis 的字号
