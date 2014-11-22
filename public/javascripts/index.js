@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var $showYear = $('.show.year');
     var $selectYear = $('.select.year.dropdown');
+    var $selectClassify = $('.select.classify.dropdown');
 
     function init() {
         $selectYear.dropdown({
@@ -9,6 +10,8 @@ $(document).ready(function() {
                 $showYear.text(val);
             }
         });
+
+        $selectClassify.dropdown();
 
         var $tabs = $('.tab');
         $('.statistics.type.menu .item').click(function() {

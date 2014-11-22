@@ -1,5 +1,4 @@
 <% include head.html %>
-
     <div class="ui inverted page grid masthead segment">
         <div class="column">
             <img src="images/cat.png" class="ui medium image">
@@ -11,42 +10,13 @@
             </div>
         </div>
     </div>
-
-    <div class="ui segment">
-        <div class="ui select year selection dropdown">
-            <input type="hidden" name="gender">
-            <div class="default text">选择年份</div>
-            <i class="dropdown icon"></i>
-            <div class="menu">
-                <div class="item" data-value="2014">2014</div>
-                <div class="item" data-value="2013">2013</div>
+    <div class="ui" style="margin-top:100px;">
+        <div class="two column ui grid">
+            <div class="column" style="text-align: center;">
+                <a href="/richman" class="ui primary huge button">我是投资人</a>
             </div>
-        </div>
-
-
-        <div class="ui tabular statistics type menu">
-            <a class="item active" data-tab="num-rank">
-                <span class="show year">2014</span>年专利数排名</a>
-            <a class="item" data-tab="speed-rank">
-                <span class="show year">2014</span>年专利增长速度排名</a>
-            <a class="item" data-tab="comprehensive-rank">
-                <span class="show year">2014</span>综合排名</a>
-        </div>
-        <div class="ui divided inbox selection list tab active" data-tab="num-rank">
-            <div class="num rank box" data-url="/patent/num-rank" data-val-key="num">
-            </div>
-        </div>
-        <div class="ui divided inbox selection list tab" data-tab="speed-rank">
-            <div class="speed rank box" data-url="/patent/speed-rank" data-val-key="speed">
-
-            </div>
-        </div>
-        <div class="ui divided inbox selection list tab" data-tab="comprehensive-rank">
-            <div class="num rank box" data-url="/patent/comprehensive-rank" data-val-key="num">
+            <div class="column" style="text-align: center;">
+                <div class="ui disabled huge button">我是学生</div>
             </div>
         </div>
     </div>
-
-    <% include foot.html %>
-        <script src="/vendor/echarts-all.js"></script>
-        <script src="/javascripts/index.js"></script>
