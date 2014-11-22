@@ -121,7 +121,6 @@ router.get('/patent/num-rank', function(req, res) {
 
 router.get('/patent/speed-rank', function(req, res) {
     var year = req.param('year');
-    console.log(year);
     res.send(speedRank[year]);
 });
 
